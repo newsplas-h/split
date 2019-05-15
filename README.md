@@ -1,4 +1,4 @@
-# split - PDF Manager
+# sp\it - PDF Manager
 
 Export single pages, page range, or split a pdf into 2 parts
 
