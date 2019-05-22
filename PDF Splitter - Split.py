@@ -20,25 +20,13 @@ root.geometry("250x200")
 root.title('Sp\it')
 root.configure()
 
+L1=Label(root,text='', wraplength=250)
 #last minute icon support
 import icon
 iconWindow=PhotoImage(data=icon.img)
 root.tk.call('wm', 'iconphoto', root._w, iconWindow)
-#notebook windows
-note=ttk.Notebook(root,height=200,width=250)
-note.grid(row=10)
-f1=ttk.Frame(note)
-f2=ttk.Frame(note)
-f3=ttk.Frame(note)
-note.add(f1, text='Split')
-note.add(f2, text='Combine')
-note.add(f3, text='Rotate')
 
-
-#start pdfload on program start?
-
-L1=Label(root,text='', wraplength=250)
-
+#begin program
 pdfRead=''
 pdfWrite=''
 filePath=''
@@ -317,7 +305,21 @@ def pdfRotateContinue():
     pdfExport.close()
     topRotate.destroy()
     
+
 B1=Button(root, text="Load PDF File", command=pdfLoad, relief=GROOVE, borderwidth=2)
+B1.pack(fill="x",expand=True)
+L1.pack(fill="both", expand=True)
+
+#notebook windows
+note=ttk.Notebook(root,height=200,width=250)
+note.pack(fill="both", expand=True)
+f1=ttk.Frame(note)
+f2=ttk.Frame(note)
+f3=ttk.Frame(note)
+note.add(f1, text='Split')
+note.add(f2, text='Combine')
+note.add(f3, text='Rotate')
+
 
 B2=Button(f1, text="Export Single Page", command=pdfYoinkerStart, relief=GROOVE, borderwidth=2)
 B3=Button(f1, text="Export Page Range", command=pdfRangeA, relief=GROOVE, borderwidth=2)
@@ -331,7 +333,6 @@ B8=Button(f3, text="Rotate Single Page", command=pdfRotateStart, relief=GROOVE, 
 B9=Button(f3, text="Rotate Page Range", command=pdfRotateB, relief=GROOVE, borderwidth=2)
 
 
-B1.grid(row=1)
 B2.pack(pady=3)
 B3.pack(pady=3)
 B4.pack(pady=3)
@@ -341,5 +342,5 @@ B7.pack(pady=3)
 B8.pack(pady=3)
 B9.pack(pady=3)
 
-L1.grid(row=2)
+
 root.mainloop()
