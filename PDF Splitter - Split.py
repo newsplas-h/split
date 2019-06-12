@@ -17,7 +17,7 @@ from pathlib import Path
 #root window
 root=tk.Tk()
 root.geometry("250x200")
-root.title('Sp\it')
+root.title('Split')
 root.configure()
 
 L1=Label(root,text='', wraplength=250)
