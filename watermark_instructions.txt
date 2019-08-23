@@ -1,0 +1,15 @@
+==================================
+Watermark Instructions
+==================================
+
+1. Open the received_stock.png in photopea
+
+2. Using the text tool, create a date. (7/31/19)
+
+3. Using that date, move (V) it into the center of the image
+
+4. Set the opacity of both layers to 50%
+
+5. export the file as a pdf
+
+6. Run Split and apply the watermark
